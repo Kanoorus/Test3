@@ -1,0 +1,40 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] mass = new int[20];
+        for (int i = 0; i < 20; i++) {
+            mass[i] = getRand();
+        }
+        printMass(mass);
+        int min = 0;
+        int max = 0;
+        for (int i = 0; i < 20; i++) {
+            if (mass[i]>mass[max]){
+                max=i;
+            }
+            if (mass[i]<mass[min]){
+                min=i;
+            }
+
+        }
+        System.out.println("\nМинимальное число в массиве: "+ mass[min] + "\nмаксимально числов массиве: " + mass[max]);
+        int temp=mass[min];
+        mass[min]=mass[max];
+        mass[max]=temp;
+        printMass(mass);
+    }
+
+    public static int getRand() {
+        return 10 - new Random().nextInt(21);
+    }
+    public static void printMass(int [] mass){
+        System.out.println("элементы массива:\n");
+        for (int a : mass) {
+            System.out.print(a + ",");
+        }
+        System.out.println();
+    }
+
+
+}
