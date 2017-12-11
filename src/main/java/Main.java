@@ -21,7 +21,7 @@ public class Main {
             System.out.println("Сгенерированный массив не удовлетворяет условиям");
         } else {
             for (int i = 0; i < mass.length; i++) {
-                if (mass[max]>mass[i]&&mass[i]>0){
+                if (mass[max]>mass[i]&&mass[i]>=0){
                     max=i;
                 }
                 if (mass[min]<mass[i]&&mass[i]<0){
