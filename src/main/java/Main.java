@@ -10,28 +10,28 @@ public class Main {
         int min = 0;
         int max = 0;
         for (int i = 0; i < mass.length; i++) {
-            if (mass[i]>mass[max]){
-                max=i;
+            if (mass[i] > mass[max]) {
+                max = i;
             }
-            if (mass[i]<mass[min]){
-                min=i;
+            if (mass[i] < mass[min]) {
+                min = i;
             }
         }
-        if (mass[min]>=0||mass[max]<=0){
+        if (mass[min] >= 0 || mass[max] <= 0) {
             System.out.println("Сгенерированный массив не удовлетворяет условиям");
         } else {
             for (int i = 0; i < mass.length; i++) {
-                if (mass[max]>mass[i]&&mass[i]>=0){
-                    max=i;
+                if (mass[max] > mass[i] && mass[i] > 0) {
+                    max = i;
                 }
-                if (mass[min]<mass[i]&&mass[i]<0){
-                    min=i;
+                if (mass[min] < mass[i] && mass[i] < 0) {
+                    min = i;
                 }
             }
-            System.out.println("\nМинимальное число в массиве: "+ mass[min] + "\nмаксимально числов массиве: " + mass[max]);
-            int temp=mass[min];
-            mass[min]=mass[max];
-            mass[max]=temp;
+            System.out.println("\nМинимальное число в массиве: " + mass[min] + "\nмаксимально числов массиве: " + mass[max]);
+            int temp = mass[min];
+            mass[min] = mass[max];
+            mass[max] = temp;
             printMass(mass);
         }
     }
@@ -39,7 +39,8 @@ public class Main {
     public static int getRand() {
         return 10 - new Random().nextInt(21);
     }
-    public static void printMass(int [] mass){
+
+    public static void printMass(int[] mass) {
         System.out.println("элементы массива:\n");
         for (int a : mass) {
             System.out.print(a + ",");
