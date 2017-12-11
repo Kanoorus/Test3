@@ -10,10 +10,10 @@ public class Main {
         int min = 0;
         int max = 0;
         for (int i = 0; i < 20; i++) {
-            if (mass[i]>mass[max]){
+            if (mass[i]>=0 && mass[i]<mass[max]){
                 max=i;
             }
-            if (mass[i]<mass[min]){
+            if (mass[i]<0 && mass[i]>mass[min]){
                 min=i;
             }
 
